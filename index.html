@@ -17,7 +17,43 @@
             max-width: 800px;
             margin: 0 auto;
         }
-        h1, h2 {
+
+        h1 {
+            color: #2cc557;
+            font-size: 24px;
+            position: relative;
+            display: inline-block;
+        }
+        .dots-wrapper {
+            display: inline;
+            font-size: 24px;
+            margin-right: 5px; /* Adjust spacing as needed */
+        }
+        .dots-wrapper::after {
+            content: '';
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            animation: dot-blink 1.2s infinite;
+        }
+        @keyframes dot-blink {
+            0% { content: '.'; }
+            33% { content: '..'; }
+            66% { content: '...'; }
+            100% { content: '...'; }
+        }
+        .slash {
+            display: inline;
+            font-size: 24px;
+            margin-left: 5px; /* Adjust spacing as needed */
+            animation: slash-blink 1.5s infinite;
+        }
+        @keyframes slash-blink {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+         h2 {
             color: #2cc557;
         }
         a {
@@ -65,7 +101,11 @@
 </head>
 <body>
     <div class="container">
-        <h1>./ Sofiyan Malidwale</h1>
+        <h1>
+            <span class="dots-wrapper"></span>
+            <span class="slash">/</span>
+            Sofiyan Malidwale
+        </h1>
         
         <h2>Hi there, I'm Sofiyan 👋</h2>
         
